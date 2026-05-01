@@ -1,11 +1,11 @@
 {
   "hero": {
-    "nameEn": "Shawn",
-    "nameBn": "শন",
+    "nameEn": "Shakib Mahamud",
+    "nameBn": "শাকিব মাহামুদ",
     "titleEn": "Full-Stack Developer & IR Graduate",
     "titleBn": "ফুল-স্ট্যাক ডেভেলপার ও আইআর গ্র্যাজুয়েট",
     "bioEn": "I build purposeful web applications from Dhaka — civic tech, community tools, and freelance projects for local and international clients.",
-    "bioBn": "ঢাকা থেকে উদ্দেশ্যমূলক ওয়েব অ্যাপ তৈরি করি — সিভিক টেক, কমিউনিটি টুলস এবং দেশি ও বিদেশি ক্লায়েন্টদের জন্য ফ্রিল্যান্স প্রজেক্ট।",
+    "bioBn": "আমি ঢাকা থেকে জনকল্যাণমূলক বিভিন্ন ওয়েব অ্যাপ্লিকেশন তৈরি করি। এর মধ্যে নাগরিক সেবা বা সিভিটিক টেক (civic tech), সামাজিক উন্নয়নমূলক টুল এবং দেশি-বিদেশি ক্লায়েন্টদের বিভিন্ন ফ্রিল্যান্স প্রজেক্ট অন্যতম।",
     "available": true
   },
   "projects": [
@@ -36,7 +36,7 @@
       "titleEn": "Dhaka Rent Map",
       "titleBn": "ঢাকা রেন্ট ম্যাপ",
       "descEn": "Interactive crowdsourced rental map for Dhaka. Built with Leaflet.js, Firebase, and Claude API for AI-powered polygon clustering.",
-      "descBn": "ঢাকার ভাড়ার ক্রাউডসোর্সড ম্যাপ — Leaflet.js, Firebase ও Claude API AI ক্লাস্টারিং সহ।",
+      "descBn": "ঢাকার বাসা ভাড়ার ক্রাউডসোর্সড ম্যাপ — Leaflet.js, Firebase ও Claude API AI ক্লাস্টারিং সহ।",
       "stack": ["Leaflet.js", "Firebase", "Claude API", "Bilingual"],
       "liveUrl": "",
       "githubUrl": "",
@@ -84,9 +84,9 @@
     }
   ],
   "contact": {
-    "email": "your@email.com",
-    "whatsapp": "",
-    "linkedin": "",
+    "email": "mdshakib.mahamud369@gmail.com",
+    "whatsapp": "+8801756527856",
+    "linkedin": "https://www.linkedin.com/in/md-shakib-mahamud/",
     "github": "https://github.com/howfunnyproject",
     "noteEn": "Open to freelance projects — local and international. Let's build something together.",
     "noteBn": "ফ্রিল্যান্স প্রজেক্টের জন্য উন্মুক্ত — দেশি ও বিদেশি। একসাথে কিছু বানাই।"
