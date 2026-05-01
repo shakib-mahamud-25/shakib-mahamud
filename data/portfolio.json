@@ -27,7 +27,7 @@
       "descEn": "Dhaka cobbler finder with Firebase backend, Cloudinary image uploads, GPS location and full Bangla UI.",
       "descBn": "ঢাকার মুচি খোঁজার অ্যাপ — Firebase, Cloudinary ইমেজ আপলোড, GPS লোকেশন ও সম্পূর্ণ বাংলা UI।",
       "stack": ["Firebase", "Cloudinary", "GPS", "Bangla UI"],
-      "liveUrl": "",
+      "liveUrl": "https://muchi-koi.vercel.app/",
       "githubUrl": "",
       "imageUrl": ""
     },
@@ -38,7 +38,7 @@
       "descEn": "Interactive crowdsourced rental map for Dhaka. Built with Leaflet.js, Firebase, and Claude API for AI-powered polygon clustering.",
       "descBn": "ঢাকার বাসা ভাড়ার ক্রাউডসোর্সড ম্যাপ — Leaflet.js, Firebase ও Claude API AI ক্লাস্টারিং সহ।",
       "stack": ["Leaflet.js", "Firebase", "Claude API", "Bilingual"],
-      "liveUrl": "",
+      "liveUrl": "https://dhaka-rent-map.netlify.app/",
       "githubUrl": "",
       "imageUrl": ""
     },
@@ -60,7 +60,7 @@
       "descEn": "Satirical Bangladeshi quiz-to-ID-card web app. Answer questions, receive your official Shahbagi identity card with html2canvas download.",
       "descBn": "ব্যঙ্গাত্মক কুইজ-টু-আইডি কার্ড অ্যাপ — প্রশ্নের উত্তর দিন, পান আপনার শাহবাগী পরিচয়পত্র।",
       "stack": ["HTML", "html2canvas", "Satirical"],
-      "liveUrl": "",
+      "liveUrl": "shahbagi-card.netlify.app",
       "githubUrl": "",
       "imageUrl": ""
     }
