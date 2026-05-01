@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "nameEn": "Shawn",
+    "nameBn": "শন",
+    "titleEn": "Full-Stack Developer & IR Graduate",
+    "titleBn": "ফুল-স্ট্যাক ডেভেলপার ও আইআর গ্র্যাজুয়েট",
+    "bioEn": "I build purposeful web applications from Dhaka — civic tech, community tools, and freelance projects for local and international clients.",
+    "bioBn": "ঢাকা থেকে উদ্দেশ্যমূলক ওয়েব অ্যাপ তৈরি করি — সিভিক টেক, কমিউনিটি টুলস এবং দেশি ও বিদেশি ক্লায়েন্টদের জন্য ফ্রিল্যান্স প্রজেক্ট।",
+    "available": true
+  },
+  "projects": [
+    {
+      "id": "salamichai",
+      "titleEn": "Salamichai",
+      "titleBn": "সালামিচাই",
+      "descEn": "Eid quiz app with AES encryption and shareable links. Features Google Analytics integration and a Glassmorphism UI.",
+      "descBn": "ঈদ কুইজ অ্যাপ — AES এনক্রিপশন, শেয়ারযোগ্য লিংক ও Google Analytics সহ গ্লাসমর্ফিজম UI।",
+      "stack": ["HTML", "AES Encryption", "Google Analytics"],
+      "liveUrl": "https://salamichai.vercel.app",
+      "githubUrl": "",
+      "imageUrl": ""
+    },
+    {
+      "id": "muchi-koi",
+      "titleEn": "Muchi Koi",
+      "titleBn": "মুচি কই",
+      "descEn": "Dhaka cobbler finder with Firebase backend, Cloudinary image uploads, GPS location and full Bangla UI.",
+      "descBn": "ঢাকার মুচি খোঁজার অ্যাপ — Firebase, Cloudinary ইমেজ আপলোড, GPS লোকেশন ও সম্পূর্ণ বাংলা UI।",
+      "stack": ["Firebase", "Cloudinary", "GPS", "Bangla UI"],
+      "liveUrl": "",
+      "githubUrl": "",
+      "imageUrl": ""
+    },
+    {
+      "id": "dhaka-rent-map",
+      "titleEn": "Dhaka Rent Map",
+      "titleBn": "ঢাকা রেন্ট ম্যাপ",
+      "descEn": "Interactive crowdsourced rental map for Dhaka. Built with Leaflet.js, Firebase, and Claude API for AI-powered polygon clustering.",
+      "descBn": "ঢাকার ভাড়ার ক্রাউডসোর্সড ম্যাপ — Leaflet.js, Firebase ও Claude API AI ক্লাস্টারিং সহ।",
+      "stack": ["Leaflet.js", "Firebase", "Claude API", "Bilingual"],
+      "liveUrl": "",
+      "githubUrl": "",
+      "imageUrl": ""
+    },
+    {
+      "id": "rain-watch-bd",
+      "titleEn": "Rain Watch BD",
+      "titleBn": "রেইন ওয়াচ বিডি",
+      "descEn": "Free alternative to Bangladesh's official weather radar. RainViewer, Open-Meteo, BAF radar tab, and bilingual EN/BN toggle.",
+      "descBn": "সরকারি রাডার সাইটের বিনামূল্যে বিকল্প — RainViewer, Open-Meteo, BAF রাডার ট্যাব ও EN/BN টগল।",
+      "stack": ["RainViewer", "Open-Meteo", "Leaflet.js"],
+      "liveUrl": "https://rain-watch.vercel.app",
+      "githubUrl": "",
+      "imageUrl": ""
+    },
+    {
+      "id": "shahbagi-id",
+      "titleEn": "Shahbagi ID Card Generator",
+      "titleBn": "শাহবাগী আইডি কার্ড জেনারেটর",
+      "descEn": "Satirical Bangladeshi quiz-to-ID-card web app. Answer questions, receive your official Shahbagi identity card with html2canvas download.",
+      "descBn": "ব্যঙ্গাত্মক কুইজ-টু-আইডি কার্ড অ্যাপ — প্রশ্নের উত্তর দিন, পান আপনার শাহবাগী পরিচয়পত্র।",
+      "stack": ["HTML", "html2canvas", "Satirical"],
+      "liveUrl": "",
+      "githubUrl": "",
+      "imageUrl": ""
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["React", "Next.js", "HTML/CSS", "Framer Motion", "Leaflet.js"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Firebase", "Firestore", "Firebase Auth", "Cloudinary"]
+    },
+    {
+      "category": "AI & APIs",
+      "items": ["Claude API", "Google Analytics", "Open-Meteo", "RainViewer"]
+    },
+    {
+      "category": "Tools & Deploy",
+      "items": ["Vercel", "Git", "GitHub", "AES Encryption"]
+    }
+  ],
+  "contact": {
+    "email": "your@email.com",
+    "whatsapp": "",
+    "linkedin": "",
+    "github": "https://github.com/howfunnyproject",
+    "noteEn": "Open to freelance projects — local and international. Let's build something together.",
+    "noteBn": "ফ্রিল্যান্স প্রজেক্টের জন্য উন্মুক্ত — দেশি ও বিদেশি। একসাথে কিছু বানাই।"
+  },
+  "testimonials": []
+}
