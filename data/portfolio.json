@@ -43,17 +43,6 @@
       "imageUrl": ""
     },
     {
-      "id": "rain-watch-bd",
-      "titleEn": "Rain Watch BD",
-      "titleBn": "রেইন ওয়াচ বিডি",
-      "descEn": "Free alternative to Bangladesh's official weather radar. RainViewer, Open-Meteo, BAF radar tab, and bilingual EN/BN toggle.",
-      "descBn": "সরকারি রাডার সাইটের বিনামূল্যে বিকল্প — RainViewer, Open-Meteo, BAF রাডার ট্যাব ও EN/BN টগল।",
-      "stack": ["RainViewer", "Open-Meteo", "Leaflet.js"],
-      "liveUrl": "https://rain-watch.vercel.app",
-      "githubUrl": "",
-      "imageUrl": ""
-    },
-    {
       "id": "shahbagi-id",
       "titleEn": "Shahbagi ID Card Generator",
       "titleBn": "শাহবাগী আইডি কার্ড জেনারেটর",
