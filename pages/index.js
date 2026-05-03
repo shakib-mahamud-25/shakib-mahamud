@@ -423,13 +423,14 @@ export default function Portfolio({ data }) {
           <div className="about-visual reveal" style={{ transitionDelay: "120ms" }}>
             <div className="about-box">
               <div className="about-box-glow" />
-              <div className="about-box-text">
-                <div className="about-box-initial">S</div>
-                <div className="about-box-label">{t("Shakib · Dhaka", "শাকিব · ঢাকা")}</div>
+                <img 
+                  src="/shakib-photo.jpg"
+                  alt="Shakib"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "2px" }}
+                />
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* ── SERVICES ── */}
