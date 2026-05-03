@@ -424,7 +424,7 @@ export default function Portfolio({ data }) {
             <div className="about-box">
               <div className="about-box-glow" />
                 <img 
-                  src="/shakib-photo.jpg"
+                  src="/shakib-photo.png"
                   alt="Shakib"
                   style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "2px" }}
                 />
