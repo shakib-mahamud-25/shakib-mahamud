@@ -466,10 +466,19 @@ export default function Portfolio({ data }) {
           {projects.map((p, i) => (
             <div key={p.id} className="proj-card reveal" style={{ transitionDelay: `${i * 70}ms` }}>
               <div className="proj-thumb">
-                {p.imageUrl
-                  ? <img src={p.imageUrl} alt={p.titleEn} />
-                  : <span className="proj-placeholder">{t("Preview", "প্রিভিউ")}</span>
-                }
+               {p.imageUrl ? (
+                 p.imageUrl.endsWith('.html') ? (
+                  <iframe 
+                   src={p.imageUrl} 
+                   title={p.titleEn}
+                   style={{ width: '100%', height: '100%', border: 'none', borderRadius: '2px' }}
+                  />
+                   ) : (
+                <img src={p.imageUrl} alt={p.titleEn} />
+                    )
+                    ) : (
+                    <span className="proj-placeholder">{t("Preview", "প্রিভিউ")}</span>
+                    )}
               </div>
               <h3 className="proj-title">{t(p.titleEn, p.titleBn)}</h3>
               <p className="proj-desc">{t(p.descEn, p.descBn)}</p>
