@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muchi Koi - Dhaka Cobbler Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: linear-gradient(135deg, #4A3428 0%, #3A2818 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        
+        .mk-poster-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mk-poster {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #4A3428 0%, #3A2818 100%);
+            border-radius: 0;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            position: relative;
+        }
+        
+        .mk-poster::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(245,235,221,0.05) 1px, transparent 1px);
+            background-size: 16px 16px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .mk-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            position: relative;
+            z-index: 2;
+            gap: 5px;
+        }
+        
+        .mk-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes mk-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        
+        .mk-emoji {
+            font-size: 1.8rem;
+            animation: mk-float 3s ease-in-out infinite;
+            line-height: 1;
+        }
+        
+        .mk-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #F5EBDD;
+            line-height: 1;
+            letter-spacing: -0.3px;
+            margin: 0;
+        }
+        
+        .mk-subtitle {
+            font-size: 0.5rem;
+            color: rgba(245, 235, 221, 0.65);
+            letter-spacing: 0.4px;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .mk-features-mini {
+            display: flex;
+            gap: 3px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3px;
+        }
+        
+        .mk-feature-badge {
+            background: rgba(212, 165, 116, 0.25);
+            border: 0.5px solid rgba(212, 165, 116, 0.4);
+            color: #D4A574;
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-size: 0.45rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+        }
+        
+        .mk-cta-btn {
+            background: #D4A574;
+            color: #4A3428;
+            padding: 4px 11px;
+            border-radius: 3px;
+            border: none;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 0.55rem;
+            cursor: pointer;
+            margin-top: 4px;
+            transition: all 0.2s ease;
+            letter-spacing: 0.2px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mk-cta-btn:hover {
+            transform: translateY(-1px);
+            background: #E0B580;
+        }
+        
+        /* Map mockup */
+        .mk-map-mini {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .mk-map-mini svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+        }
+    </style>
+</head>
+<body>
+    <div class="mk-poster-container">
+        <div class="mk-poster">
+            <!-- LEFT SIDE: Info -->
+            <div class="mk-left">
+                <div class="mk-emoji">👟</div>
+                
+                <h1 class="mk-title">Muchi Koi</h1>
+                
+                <p class="mk-subtitle">Dhaka Cobblers</p>
+                
+                <div class="mk-features-mini">
+                    <span class="mk-feature-badge">🗺️ Map</span>
+                    <span class="mk-feature-badge">📍 GPS</span>
+                    <span class="mk-feature-badge">👥 Live</span>
+                </div>
+                
+                <button class="mk-cta-btn">Explore →</button>
+            </div>
+            
+            <!-- RIGHT SIDE: Mini Map Mockup -->
+            <div class="mk-right">
+                <div class="mk-map-mini">
+                    <svg width="100%" height="100%" viewBox="0 0 160 130" preserveAspectRatio="xMidYMid slice">
+                        <!-- Map background -->
+                        <rect width="160" height="130" fill="#E8DCC8"/>
+                        
+                        <!-- Roads -->
+                        <path d="M0 65 Q80 58 160 65" stroke="#D4C9B0" stroke-width="3" fill="none"/>
+                        <path d="M80 0 Q75 65 80 130" stroke="#D4C9B0" stroke-width="3" fill="none"/>
+                        
+                        <!-- Streets -->
+                        <path d="M0 35 Q120 32 160 38" stroke="#DDD0C0" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        <path d="M0 95 Q100 90 160 100" stroke="#DDD0C0" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        
+                        <!-- Green areas -->
+                        <ellipse cx="130" cy="25" rx="20" ry="12" fill="#C8D8C0" opacity="0.6"/>
+                        <ellipse cx="35" cy="105" rx="30" ry="15" fill="#B8D4E0" opacity="0.5"/>
+                        
+                        <!-- Area labels -->
+                        <text x="40" y="28" font-size="7" font-family="Manrope" fill="#8B7355" font-weight="600" text-anchor="middle">Uttara</text>
+                        <text x="45" y="72" font-size="7" font-family="Manrope" fill="#8B7355" font-weight="600" text-anchor="middle">Mirpur</text>
+                        <text x="120" y="80" font-size="7" font-family="Manrope" fill="#8B7355" font-weight="600" text-anchor="middle">Dhanmondi</text>
+                        
+                        <!-- Cobbler pins -->
+                        <!-- Pin 1 -->
+                        <g>
+                            <path d="M38 70C38 65.6 41.6 62 46 62C50.4 62 54 65.6 54 70C54 76 46 82 46 82S38 76 38 70z" fill="#4A3428" opacity="0.9"/>
+                            <circle cx="46" cy="70" r="2.5" fill="rgba(245,235,221,0.5)"/>
+                            <text x="46" y="72" font-size="5" fill="#FAF8F5" text-anchor="middle">👟</text>
+                        </g>
+                        
+                        <!-- Pin 2 -->
+                        <g>
+                            <path d="M80 55C80 50.6 83.6 47 88 47C92.4 47 96 50.6 96 55C96 61 88 67 88 67S80 61 80 55z" fill="#4A3428" opacity="0.9"/>
+                            <circle cx="88" cy="55" r="2.5" fill="rgba(245,235,221,0.5)"/>
+                            <text x="88" y="57" font-size="5" fill="#FAF8F5" text-anchor="middle">👟</text>
+                        </g>
+                        
+                        <!-- Pin 3 -->
+                        <g>
+                            <path d="M118 72C118 67.6 121.6 64 126 64C130.4 64 134 67.6 134 72C134 78 126 84 126 84S118 78 118 72z" fill="#4A3428" opacity="0.9"/>
+                            <circle cx="126" cy="72" r="2.5" fill="rgba(245,235,221,0.5)"/>
+                            <text x="126" y="74" font-size="5" fill="#FAF8F5" text-anchor="middle">👟</text>
+                        </g>
+                        
+                        <!-- User location -->
+                        <circle cx="70" cy="68" r="8" fill="#4A9EFF" opacity="0.15"/>
+                        <circle cx="70" cy="68" r="4" fill="#4A9EFF" stroke="#fff" stroke-width="1.5" opacity="0.9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
