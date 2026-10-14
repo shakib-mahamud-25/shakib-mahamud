@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit OS - Habit Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #15171A 0%, #1E2C26 100%); display: flex; align-items: center; justify-content: center; }
+.ho-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.ho-poster { width: 100%; height: 100%; background: linear-gradient(135deg, #15171A 0%, #1E2C26 100%); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+.ho-poster::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(237,238,240,0.05) 1px, transparent 1px); background-size: 16px 16px; pointer-events: none; z-index: 1; }
+.ho-poster::after { content: ''; position: absolute; width: 120px; height: 120px; right: -30px; top: -40px; background: radial-gradient(circle, rgba(127,182,155,0.28), transparent 70%); pointer-events: none; z-index: 1; }
+.ho-left { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 12px; position: relative; z-index: 2; gap: 5px; }
+.ho-right { display: flex; align-items: center; justify-content: center; padding: 8px; position: relative; z-index: 2; background: rgba(0,0,0,0.2); }
+@keyframes ho-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes ho-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+.ho-emoji { font-size: 1.8rem; animation: ho-float 3s ease-in-out infinite; line-height: 1; }
+.ho-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.2rem; font-weight: 800; color: #EDEEF0; line-height: 1; letter-spacing: -0.3px; }
+.ho-title span { color: #7FB69B; }
+.ho-subtitle { font-size: .5rem; color: rgba(237,238,240,0.6); letter-spacing: .4px; text-transform: uppercase; font-weight: 600; }
+.ho-features-mini { display: flex; gap: 3px; justify-content: center; flex-wrap: wrap; margin-top: 3px; }
+.ho-feature-badge { background: rgba(127,182,155,0.16); border: .5px solid rgba(127,182,155,0.45); color: #B7DECB; padding: 1px 6px; border-radius: 10px; font-size: .45rem; font-weight: 700; letter-spacing: .2px; white-space: nowrap; }
+.ho-cta-btn { background: #7FB69B; color: #15171A; padding: 4px 11px; border-radius: 3px; border: none; font-family: 'Inter', sans-serif; font-weight: 700; font-size: .55rem; cursor: pointer; margin-top: 4px; transition: all .2s ease; letter-spacing: .2px; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
+.ho-cta-btn:hover { transform: translateY(-1px); filter: brightness(1.1); }
+
+
+        .ho-card { width: 100%; background: #1C1F23; border: 1px solid #2B2F36; border-radius: 6px; padding: 8px 9px; box-shadow: 0 4px 14px rgba(0,0,0,.45); animation: ho-float 4s ease-in-out infinite; }
+        .ho-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .ho-head b { font-size: .45rem; text-transform: uppercase; letter-spacing: .4px; color: #9BA0A8; font-weight: 700; }
+        .ho-streak { font-size: .42rem; font-weight: 700; color: #E0A667; background: #2E2418; padding: 1px 5px; border-radius: 8px; }
+        .ho-row { display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 4px; }
+        .ho-row span { font-size: .4rem; color: #C5C8CE; font-weight: 600; white-space: nowrap; width: 42px; overflow: hidden; text-overflow: ellipsis; }
+        .ho-cells { display: flex; gap: 2px; flex: 1; }
+        .ho-cells i { flex: 1; aspect-ratio: 1; max-width: 11px; border-radius: 2px; background: #2B2F36; }
+        @keyframes ho-check { 0%, 8% { background: #2B2F36; transform: scale(.8); } 18% { background: var(--c); transform: scale(1.15); } 26%, 100% { background: var(--c); transform: scale(1); } }
+        .ho-cells i.on { animation: ho-check 6s ease-out infinite; animation-delay: var(--d); }
+        .ho-bar { height: 3px; background: #2B2F36; border-radius: 3px; margin-top: 6px; overflow: hidden; }
+        @keyframes ho-fill { 0%, 10% { width: 0; } 60%, 100% { width: 74%; } }
+        .ho-bar div { height: 100%; background: #7FB69B; border-radius: 3px; animation: ho-fill 6s ease-in-out infinite; }
+        .ho-pct { display: flex; justify-content: space-between; font-size: .38rem; color: #787E88; margin-top: 3px; font-weight: 600; }
+        .ho-pct b { color: #7FB69B; }
+
+    </style>
+</head>
+<body>
+    <div class="ho-container">
+        <div class="ho-poster">
+            <!-- LEFT SIDE: Info -->
+            <div class="ho-left">
+                <div class="ho-emoji">🌱</div>
+                <h1 class="ho-title">Habit <span>OS</span></h1>
+                <p class="ho-subtitle">Track · Analyze · Improve</p>
+                <div class="ho-features-mini">
+                    <span class="ho-feature-badge">🔥 Streaks</span>
+                    <span class="ho-feature-badge">☁️ Live Sync</span>
+                    <span class="ho-feature-badge">📱 PWA</span>
+                </div>
+                <button class="ho-cta-btn">Start Tracking →</button>
+            </div>
+
+            <!-- RIGHT SIDE: Mockup -->
+            <div class="ho-right">
+                <div class="ho-card">
+                    <div class="ho-head"><b>October · Tracker</b><span class="ho-streak">🔥 12 days</span></div>
+                        <div class="ho-row"><span>Wake up</span><div class="ho-cells"><i class="on" style="--c:#3F6B57;--d:0.00s"></i><i class="on" style="--c:#3F6B57;--d:0.12s"></i><i class="" style="--c:#3F6B57;--d:0.24s"></i><i class="on" style="--c:#3F6B57;--d:0.36s"></i><i class="on" style="--c:#3F6B57;--d:0.48s"></i><i class="on" style="--c:#3F6B57;--d:0.60s"></i><i class="" style="--c:#3F6B57;--d:0.72s"></i><i class="on" style="--c:#3F6B57;--d:0.84s"></i></div></div>
+                        <div class="ho-row"><span>Gym</span><div class="ho-cells"><i class="on" style="--c:#C4793F;--d:0.96s"></i><i class="" style="--c:#C4793F;--d:1.08s"></i><i class="on" style="--c:#C4793F;--d:1.20s"></i><i class="on" style="--c:#C4793F;--d:1.32s"></i><i class="" style="--c:#C4793F;--d:1.44s"></i><i class="on" style="--c:#C4793F;--d:1.56s"></i><i class="on" style="--c:#C4793F;--d:1.68s"></i><i class="" style="--c:#C4793F;--d:1.80s"></i></div></div>
+                        <div class="ho-row"><span>Reading</span><div class="ho-cells"><i class="on" style="--c:#3F8FAE;--d:1.92s"></i><i class="on" style="--c:#3F8FAE;--d:2.04s"></i><i class="on" style="--c:#3F8FAE;--d:2.16s"></i><i class="" style="--c:#3F8FAE;--d:2.28s"></i><i class="on" style="--c:#3F8FAE;--d:2.40s"></i><i class="" style="--c:#3F8FAE;--d:2.52s"></i><i class="on" style="--c:#3F8FAE;--d:2.64s"></i><i class="on" style="--c:#3F8FAE;--d:2.76s"></i></div></div>
+                        <div class="ho-row"><span>Project work</span><div class="ho-cells"><i class="" style="--c:#B3563F;--d:2.88s"></i><i class="on" style="--c:#B3563F;--d:3.00s"></i><i class="on" style="--c:#B3563F;--d:3.12s"></i><i class="on" style="--c:#B3563F;--d:3.24s"></i><i class="" style="--c:#B3563F;--d:3.36s"></i><i class="on" style="--c:#B3563F;--d:3.48s"></i><i class="on" style="--c:#B3563F;--d:3.60s"></i><i class="on" style="--c:#B3563F;--d:3.72s"></i></div></div>
+                    <div class="ho-bar"><div></div></div>
+                    <div class="ho-pct"><span>Goal completion</span><b>74%</b></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -15,7 +15,11 @@
       "titleBn": "সালামিচাই",
       "descEn": "Eid quiz app with AES encryption and shareable links. Features Google Analytics integration and a Glassmorphism UI.",
       "descBn": "ঈদ কুইজ অ্যাপ — AES এনক্রিপশন, শেয়ারযোগ্য লিংক ও Google Analytics সহ গ্লাসমর্ফিজম UI।",
-      "stack": ["HTML", "AES Encryption", "Google Analytics"],
+      "stack": [
+        "HTML",
+        "AES Encryption",
+        "Google Analytics"
+      ],
       "liveUrl": "https://salamichai.vercel.app",
       "githubUrl": "",
       "imageUrl": "/salamichai-poster.html"
@@ -26,50 +30,121 @@
       "titleBn": "মুচি কই",
       "descEn": "Dhaka cobbler finder with Firebase backend, Cloudinary image uploads, GPS location and full Bangla UI.",
       "descBn": "ঢাকার মুচি খোঁজার অ্যাপ — Firebase, Cloudinary ইমেজ আপলোড, GPS লোকেশন ও সম্পূর্ণ বাংলা UI।",
-      "stack": ["Firebase", "Cloudinary", "GPS", "Bangla UI"],
+      "stack": [
+        "Firebase",
+        "Cloudinary",
+        "GPS",
+        "Bangla UI"
+      ],
       "liveUrl": "https://muchi-koi.vercel.app/",
       "githubUrl": "",
       "imageUrl": "/muchi-koi-poster.html"
     },
     {
-      "id": "dhaka-rent-map",
-      "titleEn": "Dhaka Rent Map",
-      "titleBn": "ঢাকা রেন্ট ম্যাপ",
-      "descEn": "Interactive crowdsourced rental map for Dhaka. Built with Leaflet.js, Firebase, and Claude API for AI-powered polygon clustering.",
-      "descBn": "ঢাকার বাসা ভাড়ার ক্রাউডসোর্সড ম্যাপ — Leaflet.js, Firebase ও Claude API AI ক্লাস্টারিং সহ।",
-      "stack": ["Leaflet.js", "Firebase", "Claude API", "Bilingual"],
-      "liveUrl": "https://dhaka-rent-map.netlify.app/",
-      "githubUrl": "",
-      "imageUrl": ""
+      "id": "tuition-meter",
+      "titleEn": "TuitionMeter",
+      "titleBn": "টিউশনমিটার",
+      "descEn": "Anonymous, community-driven salary benchmarking for private tutors in Bangladesh. Filter by area, level and subject, with moderated reports and P25–P75 range insights.",
+      "descBn": "বাংলাদেশের প্রাইভেট টিউটরদের জন্য বেনামী, কমিউনিটি-ভিত্তিক বেতন বেঞ্চমার্কিং — এলাকা, লেভেল ও বিষয় অনুযায়ী ফিল্টার এবং মডারেটেড রিপোর্ট।",
+      "stack": [
+        "Next.js",
+        "Firebase",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "liveUrl": "https://YOUR-TUITION-METER-URL.vercel.app",
+      "githubUrl": "https://github.com/shakib-mahamud-25/tuition-meter",
+      "imageUrl": "/tuition-meter-poster.html"
     },
     {
-      "id": "shahbagi-id",
-      "titleEn": "Shahbagi ID Card Generator",
-      "titleBn": "শাহবাগী আইডি কার্ড জেনারেটর",
-      "descEn": "Satirical Bangladeshi quiz-to-ID-card web app. Answer questions, receive your official Shahbagi identity card with html2canvas download.",
-      "descBn": "ব্যঙ্গাত্মক কুইজ-টু-আইডি কার্ড অ্যাপ — প্রশ্নের উত্তর দিন, পান আপনার শাহবাগী পরিচয়পত্র।",
-      "stack": ["HTML", "html2canvas", "Satirical"],
-      "liveUrl": "shahbagi-card.netlify.app",
-      "githubUrl": "",
-      "imageUrl": ""
+      "id": "sotorko",
+      "titleEn": "Sotorko",
+      "titleBn": "সতর্কো",
+      "descEn": "Crowdsourced, anonymous safety map for women in Dhaka. Heatmap and pin views, edit-code ownership with no accounts, Cloudinary face-pixelation and a fully bilingual UI.",
+      "descBn": "ঢাকার নারীদের জন্য ক্রাউডসোর্সড, বেনামী নিরাপত্তা ম্যাপ — হিটম্যাপ ও পিন ভিউ, অ্যাকাউন্ট ছাড়া এডিট-কোড, Cloudinary ফেস-পিক্সেলেশন ও সম্পূর্ণ দ্বিভাষিক UI।",
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "Leaflet.js",
+        "Cloudinary",
+        "Bilingual"
+      ],
+      "liveUrl": "https://YOUR-SOTORKO-URL.vercel.app",
+      "githubUrl": "https://github.com/shakib-mahamud-25/sotorko",
+      "imageUrl": "/sotorko-poster.html"
+    },
+    {
+      "id": "habit-os",
+      "titleEn": "Habit OS",
+      "titleBn": "হ্যাবিট ওএস",
+      "descEn": "Personal habit tracker with a monthly grid, streak engine, calendar heatmap and analytics. Real-time Firestore sync across devices, Google sign-in, installable as a PWA.",
+      "descBn": "মাসিক গ্রিড, স্ট্রিক ইঞ্জিন, ক্যালেন্ডার হিটম্যাপ ও অ্যানালিটিক্স সহ পার্সোনাল হ্যাবিট ট্র্যাকার — রিয়েল-টাইম Firestore সিঙ্ক, Google সাইন-ইন ও PWA।",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Firebase",
+        "Chart.js",
+        "PWA"
+      ],
+      "liveUrl": "https://YOUR-HABIT-OS-URL.vercel.app",
+      "githubUrl": "https://github.com/shakib-mahamud-25/habit-os",
+      "imageUrl": "/habit-os-poster.html"
+    },
+    {
+      "id": "baki-khata",
+      "titleEn": "Baki Khata",
+      "titleBn": "বাকি খাতা",
+      "descEn": "Live credit ledger for university-area shops and student customers. Owners see dues in real time; offline-friendly PWA with PIN lock, English/Bangla UI and money stored as integer paisa.",
+      "descBn": "বিশ্ববিদ্যালয় এলাকার দোকান ও শিক্ষার্থীদের জন্য লাইভ বাকি খাতা — মালিক রিয়েল-টাইমে বাকি দেখেন; PIN লক, অফলাইন PWA ও ইংরেজি/বাংলা UI।",
+      "stack": [
+        "Vanilla JS",
+        "Vite",
+        "Firebase",
+        "PWA",
+        "Bilingual"
+      ],
+      "liveUrl": "https://YOUR-BAKI-KHATA-URL.vercel.app",
+      "githubUrl": "https://github.com/shakib-mahamud-25/baki-khata1",
+      "imageUrl": "/baki-khata-poster.html"
     }
   ],
   "skills": [
     {
       "category": "Frontend",
-      "items": ["React", "Next.js", "HTML/CSS", "Framer Motion", "Leaflet.js"]
+      "items": [
+        "React",
+        "Next.js",
+        "HTML/CSS",
+        "Framer Motion",
+        "Leaflet.js"
+      ]
     },
     {
       "category": "Backend",
-      "items": ["Firebase", "Firestore", "Firebase Auth", "Cloudinary"]
+      "items": [
+        "Firebase",
+        "Firestore",
+        "Firebase Auth",
+        "Cloudinary"
+      ]
     },
     {
       "category": "AI & APIs",
-      "items": ["Claude API", "Google Analytics", "Open-Meteo", "RainViewer"]
+      "items": [
+        "Claude API",
+        "Google Analytics",
+        "Open-Meteo",
+        "RainViewer"
+      ]
     },
     {
       "category": "Tools & Deploy",
-      "items": ["Vercel", "Git", "GitHub", "AES Encryption"]
+      "items": [
+        "Vercel",
+        "Git",
+        "GitHub",
+        "AES Encryption"
+      ]
     }
   ],
   "contact": {

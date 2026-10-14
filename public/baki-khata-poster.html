@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baki Khata - Live Credit Ledger</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'DM Sans', sans-serif; background: linear-gradient(135deg, #1a2744 0%, #253460 100%); display: flex; align-items: center; justify-content: center; }
+.bk-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.bk-poster { width: 100%; height: 100%; background: linear-gradient(135deg, #1a2744 0%, #253460 100%); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+.bk-poster::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 16px 16px; pointer-events: none; z-index: 1; }
+.bk-poster::after { content: ''; position: absolute; width: 120px; height: 120px; right: -30px; top: -40px; background: radial-gradient(circle, rgba(232,131,74,0.30), transparent 70%); pointer-events: none; z-index: 1; }
+.bk-left { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 12px; position: relative; z-index: 2; gap: 5px; }
+.bk-right { display: flex; align-items: center; justify-content: center; padding: 8px; position: relative; z-index: 2; background: rgba(0,0,0,0.18); }
+@keyframes bk-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes bk-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+.bk-emoji { font-size: 1.8rem; animation: bk-float 3s ease-in-out infinite; line-height: 1; }
+.bk-title { font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 800; color: #FFFFFF; line-height: 1; letter-spacing: -0.3px; }
+.bk-title span { color: #e8834a; }
+.bk-subtitle { font-size: .5rem; color: rgba(255,255,255,0.62); letter-spacing: .4px; text-transform: uppercase; font-weight: 600; }
+.bk-features-mini { display: flex; gap: 3px; justify-content: center; flex-wrap: wrap; margin-top: 3px; }
+.bk-feature-badge { background: rgba(232,131,74,0.2); border: .5px solid rgba(232,131,74,0.5); color: #f5a572; padding: 1px 6px; border-radius: 10px; font-size: .45rem; font-weight: 700; letter-spacing: .2px; white-space: nowrap; }
+.bk-cta-btn { background: #e8834a; color: #1a2744; padding: 4px 11px; border-radius: 3px; border: none; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: .55rem; cursor: pointer; margin-top: 4px; transition: all .2s ease; letter-spacing: .2px; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
+.bk-cta-btn:hover { transform: translateY(-1px); filter: brightness(1.1); }
+
+
+        .bk-card { width: 100%; background: #fff; border-radius: 6px; padding: 8px 9px; box-shadow: 0 4px 14px rgba(0,0,0,.4); animation: bk-float 4s ease-in-out infinite; }
+        .bk-head { display: flex; justify-content: space-between; align-items: center; }
+        .bk-head b { font-size: .42rem; text-transform: uppercase; letter-spacing: .4px; color: #5a5a72; font-weight: 700; }
+        .bk-live { display: flex; align-items: center; gap: 2px; font-size: .36rem; font-weight: 700; color: #2d8c5e; background: #e8f5ee; padding: 1px 4px; border-radius: 8px; }
+        .bk-live i { width: 3px; height: 3px; border-radius: 50%; background: #2d8c5e; animation: bk-pulse 1.4s ease-in-out infinite; }
+        .bk-due { font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 800; color: #1a2744; line-height: 1; margin: 5px 0 1px; letter-spacing: -.3px; }
+        .bk-due small { font-family: 'DM Sans', sans-serif; font-size: .4rem; color: #9898b0; font-weight: 600; margin-left: 2px; letter-spacing: 0; }
+        .bk-list { margin-top: 5px; border-top: 1px dashed #e2ddd6; padding-top: 4px; }
+        .bk-entry { display: flex; justify-content: space-between; align-items: center; font-size: .4rem; color: #1a1a2e; padding: 2px 0; font-weight: 600; }
+        .bk-entry em { font-style: normal; color: #c0392b; font-weight: 700; }
+        .bk-entry em.pay { color: #2d8c5e; }
+        .bk-entry span { display: flex; align-items: center; gap: 3px; }
+        .bk-tick { width: 6px; height: 6px; border-radius: 50%; background: #e2ddd6; color: #fff; font-size: 4px; display: inline-flex; align-items: center; justify-content: center; }
+        @keyframes bk-confirm { 0%, 30% { background: #e2ddd6; transform: scale(1); } 40% { background: #2d8c5e; transform: scale(1.5); } 50%, 100% { background: #2d8c5e; transform: scale(1); } }
+        .bk-tick.c { animation: bk-confirm 5s ease-out infinite; }
+        .bk-tick.c2 { animation: bk-confirm 5s ease-out 1.2s infinite; }
+        @keyframes bk-slide { 0%, 55% { opacity: 0; transform: translateY(-4px); max-height: 0; } 70%, 92% { opacity: 1; transform: translateY(0); max-height: 12px; } 100% { opacity: 0; max-height: 12px; } }
+        .bk-new { animation: bk-slide 5s ease-out infinite; overflow: hidden; }
+
+    </style>
+</head>
+<body>
+    <div class="bk-container">
+        <div class="bk-poster">
+            <!-- LEFT SIDE: Info -->
+            <div class="bk-left">
+                <div class="bk-emoji">📒</div>
+                <h1 class="bk-title">Baki <span>Khata</span></h1>
+                <p class="bk-subtitle">বাকি খাতা · Live Ledger</p>
+                <div class="bk-features-mini">
+                    <span class="bk-feature-badge">⚡ Real-time</span>
+                    <span class="bk-feature-badge">🔐 PIN</span>
+                    <span class="bk-feature-badge">EN / বাং</span>
+                </div>
+                <button class="bk-cta-btn">Open Ledger →</button>
+            </div>
+
+            <!-- RIGHT SIDE: Mockup -->
+            <div class="bk-right">
+                <div class="bk-card">
+                    <div class="bk-head"><b>Rahim · Due</b><span class="bk-live"><i></i>LIVE</span></div>
+                    <div class="bk-due">৳1,240<small>baki</small></div>
+                    <div class="bk-list">
+                        <div class="bk-entry"><span><i class="bk-tick c">✓</i>Chai &amp; Singara</span><em>-৳60</em></div>
+                        <div class="bk-entry"><span><i class="bk-tick c2">✓</i>Notebook</span><em>-৳120</em></div>
+                        <div class="bk-entry"><span><i class="bk-tick c">✓</i>Payment</span><em class="pay">+৳500</em></div>
+                        <div class="bk-entry bk-new"><span><i class="bk-tick">✓</i>Lunch</span><em>-৳90</em></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

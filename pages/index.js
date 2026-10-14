@@ -56,8 +56,8 @@ export default function Portfolio({ data }) {
       titleBn: "ম্যাপ-ভিত্তিক অ্যাপ",
       descEn: "Interactive maps with location data, filtering, and crowd-sourced contributions. Perfect for directories, real estate, and local discovery tools.",
       descBn: "লোকেশন ডেটা, ফিল্টারিং ও ক্রাউডসোর্সড কন্ট্রিবিউশন সহ ইন্টারেক্টিভ ম্যাপ।",
-      refEn: "Like Muchi Koi or Dhaka Rent Map",
-      refBn: "মুচি কই বা ঢাকা রেন্ট ম্যাপের মতো",
+      refEn: "Like Muchi Koi",
+      refBn: "মুচি কই-এর মতো",
     },
     {
       titleEn: "Custom MVPs",

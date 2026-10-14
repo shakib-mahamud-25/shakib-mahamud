@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuitionMeter - Tutor Salary Benchmarks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tm-poster-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tm-poster {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+        }
+
+        .tm-poster::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(226,232,240,0.06) 1px, transparent 1px);
+            background-size: 16px 16px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .tm-poster::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            right: -30px;
+            top: -40px;
+            background: radial-gradient(circle, rgba(5,150,105,0.28), transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .tm-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            position: relative;
+            z-index: 2;
+            gap: 5px;
+        }
+
+        .tm-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.18);
+        }
+
+        @keyframes tm-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .tm-emoji {
+            font-size: 1.8rem;
+            animation: tm-float 3s ease-in-out infinite;
+            line-height: 1;
+        }
+
+        .tm-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            line-height: 1;
+            letter-spacing: -0.3px;
+        }
+
+        .tm-title span { color: #059669; }
+
+        .tm-subtitle {
+            font-size: 0.5rem;
+            color: rgba(226, 232, 240, 0.65);
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .tm-features-mini {
+            display: flex;
+            gap: 3px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3px;
+        }
+
+        .tm-feature-badge {
+            background: rgba(5, 150, 105, 0.2);
+            border: 0.5px solid rgba(5, 150, 105, 0.5);
+            color: #34D399;
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-size: 0.45rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+        }
+
+        .tm-cta-btn {
+            background: #059669;
+            color: #fff;
+            padding: 4px 11px;
+            border-radius: 3px;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.55rem;
+            cursor: pointer;
+            margin-top: 4px;
+            transition: all 0.2s ease;
+            letter-spacing: 0.2px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .tm-cta-btn:hover {
+            transform: translateY(-1px);
+            background: #10B981;
+        }
+
+        /* Benchmark card mockup */
+        .tm-card {
+            width: 100%;
+            background: #FFFFFF;
+            border-radius: 6px;
+            padding: 8px 9px 9px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+            animation: tm-float 4s ease-in-out infinite;
+        }
+
+        .tm-card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .tm-card-label {
+            font-size: 0.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: #64748B;
+        }
+
+        .tm-conf {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            background: #D1FAE5;
+            color: #059669;
+            font-size: 0.36rem;
+            font-weight: 700;
+            padding: 1px 4px;
+            border-radius: 8px;
+        }
+
+        .tm-conf i {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #059669;
+            animation: tm-pulse 1.6s ease-in-out infinite;
+        }
+
+        @keyframes tm-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .tm-salary {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #0F172A;
+            line-height: 1;
+            letter-spacing: -0.3px;
+        }
+
+        .tm-salary small {
+            font-size: 0.4rem;
+            font-weight: 600;
+            color: #94A3B8;
+            margin-left: 2px;
+            letter-spacing: 0;
+        }
+
+        .tm-bar-wrap {
+            position: relative;
+            margin: 12px 0 5px;
+        }
+
+        .tm-track {
+            height: 4px;
+            background: #E2E8F0;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        @keyframes tm-iqr {
+            0%   { left: 50%; width: 0%; opacity: 0; }
+            25%  { opacity: 1; }
+            45%, 85% { left: 24%; width: 46%; opacity: 1; }
+            100% { left: 24%; width: 46%; opacity: 0; }
+        }
+
+        .tm-iqr {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            border-radius: 4px;
+            background: rgba(5, 150, 105, 0.35);
+            animation: tm-iqr 5s ease-in-out infinite;
+        }
+
+        @keyframes tm-median {
+            0%   { left: 0%; opacity: 0; }
+            15%  { opacity: 1; }
+            45%, 85% { left: 52%; opacity: 1; }
+            100% { left: 52%; opacity: 0; }
+        }
+
+        .tm-median {
+            position: absolute;
+            top: -5px;
+            width: 2.5px;
+            height: 14px;
+            background: #059669;
+            border-radius: 2px;
+            transform: translateX(-50%);
+            animation: tm-median 5s ease-in-out infinite;
+        }
+
+        .tm-ends {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.38rem;
+            color: #94A3B8;
+            font-weight: 600;
+            margin-top: 3px;
+        }
+
+        .tm-ends b { color: #059669; }
+
+        .tm-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 2px;
+            height: 16px;
+            margin-top: 6px;
+            border-top: 1px dashed #E2E8F0;
+            padding-top: 5px;
+        }
+
+        @keyframes tm-grow {
+            0%, 100% { transform: scaleY(0.35); }
+            50% { transform: scaleY(1); }
+        }
+
+        .tm-bars span {
+            flex: 1;
+            height: 100%;
+            background: #A7F3D0;
+            border-radius: 1px 1px 0 0;
+            transform-origin: bottom;
+            animation: tm-grow 3s ease-in-out infinite;
+        }
+
+        .tm-bars span:nth-child(3n)   { background: #34D399; animation-delay: -0.4s; }
+        .tm-bars span:nth-child(3n+1) { animation-delay: -1.1s; }
+        .tm-bars span:nth-child(3n+2) { background: #6EE7B7; animation-delay: -1.9s; }
+    </style>
+</head>
+<body>
+    <div class="tm-poster-container">
+        <div class="tm-poster">
+            <!-- LEFT SIDE: Info -->
+            <div class="tm-left">
+                <div class="tm-emoji">📊</div>
+
+                <h1 class="tm-title">Tuition<span>Meter</span></h1>
+
+                <p class="tm-subtitle">Tutor Salary Benchmarks</p>
+
+                <div class="tm-features-mini">
+                    <span class="tm-feature-badge">🔒 Anonymous</span>
+                    <span class="tm-feature-badge">📈 Live</span>
+                    <span class="tm-feature-badge">৳ BDT</span>
+                </div>
+
+                <button class="tm-cta-btn">Check Rate →</button>
+            </div>
+
+            <!-- RIGHT SIDE: Benchmark card mockup -->
+            <div class="tm-right">
+                <div class="tm-card">
+                    <div class="tm-card-head">
+                        <span class="tm-card-label">Median · Dhanmondi</span>
+                        <span class="tm-conf"><i></i>High</span>
+                    </div>
+
+                    <div class="tm-salary">৳8,500<small>/month</small></div>
+
+                    <div class="tm-bar-wrap">
+                        <div class="tm-track">
+                            <div class="tm-iqr"></div>
+                            <div class="tm-median"></div>
+                        </div>
+                        <div class="tm-ends"><span>৳4k</span><b>P25–P75</b><span>৳15k</span></div>
+                    </div>
+
+                    <div class="tm-bars">
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

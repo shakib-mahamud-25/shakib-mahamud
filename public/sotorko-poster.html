@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sotorko - Women's Safety Map, Dhaka</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0f2a3d 0%, #1D4E5F 100%); display: flex; align-items: center; justify-content: center; }
+.st-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.st-poster { width: 100%; height: 100%; background: linear-gradient(135deg, #0f2a3d 0%, #1D4E5F 100%); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+.st-poster::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(247,244,238,0.06) 1px, transparent 1px); background-size: 16px 16px; pointer-events: none; z-index: 1; }
+.st-poster::after { content: ''; position: absolute; width: 120px; height: 120px; right: -30px; top: -40px; background: radial-gradient(circle, rgba(201,121,62,0.30), transparent 70%); pointer-events: none; z-index: 1; }
+.st-left { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 12px; position: relative; z-index: 2; gap: 5px; }
+.st-right { display: flex; align-items: center; justify-content: center; padding: 8px; position: relative; z-index: 2; background: rgba(0,0,0,0.18); }
+@keyframes st-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes st-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+.st-emoji { font-size: 1.8rem; animation: st-float 3s ease-in-out infinite; line-height: 1; }
+.st-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.2rem; font-weight: 800; color: #F7F4EE; line-height: 1; letter-spacing: -0.3px; }
+.st-title span { color: #C9793E; }
+.st-subtitle { font-size: .5rem; color: rgba(247,244,238,0.65); letter-spacing: .4px; text-transform: uppercase; font-weight: 600; }
+.st-features-mini { display: flex; gap: 3px; justify-content: center; flex-wrap: wrap; margin-top: 3px; }
+.st-feature-badge { background: rgba(201,121,62,0.2); border: .5px solid rgba(201,121,62,0.5); color: #F0B98C; padding: 1px 6px; border-radius: 10px; font-size: .45rem; font-weight: 700; letter-spacing: .2px; white-space: nowrap; }
+.st-cta-btn { background: #C9793E; color: #0f2a3d; padding: 4px 11px; border-radius: 3px; border: none; font-family: 'Inter', sans-serif; font-weight: 700; font-size: .55rem; cursor: pointer; margin-top: 4px; transition: all .2s ease; letter-spacing: .2px; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
+.st-cta-btn:hover { transform: translateY(-1px); filter: brightness(1.1); }
+
+
+        .st-map { width: 100%; height: 100%; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
+        .st-map svg { width: 100%; height: 100%; display: block; }
+        @keyframes st-heat { 0%, 100% { transform: scale(.85); opacity: .55; } 50% { transform: scale(1.15); opacity: .9; } }
+        .st-h1 { transform-origin: 48px 70px; animation: st-heat 3.2s ease-in-out infinite; }
+        .st-h2 { transform-origin: 112px 46px; animation: st-heat 3.2s ease-in-out -1.1s infinite; }
+        .st-h3 { transform-origin: 98px 100px; animation: st-heat 3.2s ease-in-out -2.0s infinite; }
+        @keyframes st-ping { 0% { r: 3; opacity: .9; } 100% { r: 12; opacity: 0; } }
+        .st-ping { animation: st-ping 2.4s ease-out infinite; }
+
+    </style>
+</head>
+<body>
+    <div class="st-container">
+        <div class="st-poster">
+            <!-- LEFT SIDE: Info -->
+            <div class="st-left">
+                <div class="st-emoji">🛡️</div>
+                <h1 class="st-title">Sotor<span>ko</span></h1>
+                <p class="st-subtitle">সতর্কো · Safety Map</p>
+                <div class="st-features-mini">
+                    <span class="st-feature-badge">🗺️ Heatmap</span>
+                    <span class="st-feature-badge">🔒 Anonymous</span>
+                    <span class="st-feature-badge">বাংলা</span>
+                </div>
+                <button class="st-cta-btn">View Map →</button>
+            </div>
+
+            <!-- RIGHT SIDE: Mockup -->
+            <div class="st-right">
+                <div class="st-map">
+                    <svg viewBox="0 0 160 130" preserveAspectRatio="xMidYMid slice">
+                        <rect width="160" height="130" fill="#F7F4EE"/>
+                        <ellipse cx="136" cy="112" rx="34" ry="14" fill="#CFE3EA" opacity=".8"/>
+                        <ellipse cx="24" cy="24" rx="22" ry="10" fill="#D5E5D0" opacity=".8"/>
+                        <path d="M0 62 Q80 52 160 64" stroke="#E4DCCB" stroke-width="4" fill="none"/>
+                        <path d="M78 0 Q70 65 82 130" stroke="#E4DCCB" stroke-width="4" fill="none"/>
+                        <path d="M0 100 Q90 92 160 88" stroke="#EDE6D8" stroke-width="2" fill="none"/>
+                        <path d="M0 28 Q70 34 160 24" stroke="#EDE6D8" stroke-width="2" fill="none"/>
+                        <path d="M122 0 Q116 60 128 130" stroke="#EDE6D8" stroke-width="2" fill="none"/>
+                        <defs>
+                            <radialGradient id="sh1"><stop offset="0" stop-color="#8A2E2E" stop-opacity=".85"/><stop offset="1" stop-color="#8A2E2E" stop-opacity="0"/></radialGradient>
+                            <radialGradient id="sh2"><stop offset="0" stop-color="#C9793E" stop-opacity=".85"/><stop offset="1" stop-color="#C9793E" stop-opacity="0"/></radialGradient>
+                        </defs>
+                        <circle class="st-h1" cx="48" cy="70" r="26" fill="url(#sh1)"/>
+                        <circle class="st-h2" cx="112" cy="46" r="22" fill="url(#sh2)"/>
+                        <circle class="st-h3" cx="98" cy="100" r="20" fill="url(#sh2)"/>
+                        <text x="34" y="22" font-size="6.5" font-family="Inter" font-weight="600" fill="#7A6B52">Uttara</text>
+                        <text x="30" y="84" font-size="6.5" font-family="Inter" font-weight="600" fill="#7A6B52">Mirpur</text>
+                        <text x="112" y="62" font-size="6.5" font-family="Inter" font-weight="600" fill="#7A6B52">Gulshan</text>
+                        <circle class="st-ping" cx="48" cy="70" r="3" fill="none" stroke="#8A2E2E" stroke-width="1"/>
+                        <circle cx="48" cy="70" r="3" fill="#8A2E2E" stroke="#fff" stroke-width="1"/>
+                        <circle cx="112" cy="46" r="2.5" fill="#C9793E" stroke="#fff" stroke-width="1"/>
+                        <circle cx="98" cy="100" r="2.5" fill="#C9793E" stroke="#fff" stroke-width="1"/>
+                        <circle cx="70" cy="62" r="2.2" fill="#1D4E5F" stroke="#fff" stroke-width="1"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
