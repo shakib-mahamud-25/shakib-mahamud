@@ -52,7 +52,7 @@
         "TypeScript",
         "Tailwind CSS"
       ],
-      "liveUrl": "https://YOUR-TUITION-METER-URL.vercel.app",
+      "liveUrl": "https://tuition-meter.vercel.app/",
       "githubUrl": "https://github.com/shakib-mahamud-25/tuition-meter",
       "imageUrl": "/tuition-meter-poster.html"
     },
@@ -69,7 +69,7 @@
         "Cloudinary",
         "Bilingual"
       ],
-      "liveUrl": "https://YOUR-SOTORKO-URL.vercel.app",
+      "liveUrl": "https://sotorko.vercel.app/",
       "githubUrl": "https://github.com/shakib-mahamud-25/sotorko",
       "imageUrl": "/sotorko-poster.html"
     },
@@ -86,7 +86,7 @@
         "Chart.js",
         "PWA"
       ],
-      "liveUrl": "https://YOUR-HABIT-OS-URL.vercel.app",
+      "liveUrl": "https://habit-track-os.vercel.app/",
       "githubUrl": "https://github.com/shakib-mahamud-25/habit-os",
       "imageUrl": "/habit-os-poster.html"
     },
@@ -103,7 +103,7 @@
         "PWA",
         "Bilingual"
       ],
-      "liveUrl": "https://YOUR-BAKI-KHATA-URL.vercel.app",
+      "liveUrl": "https://baki-khata1.vercel.app/",
       "githubUrl": "https://github.com/shakib-mahamud-25/baki-khata1",
       "imageUrl": "/baki-khata-poster.html"
     }
